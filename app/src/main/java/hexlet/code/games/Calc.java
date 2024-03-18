@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,22 +9,18 @@ public class Calc {
     public static void calculatorGame() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the brain games!");
-        System.out.println("May I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("What is the result of the expression?");
+        Engine.gameProcessor("Calc");
         String answer;
         int counter = 0;
         int firstNumber;
         int secondNumber;
-        int operationNumber;
+        int operationType;
         int result;
-        while (counter < 3) {
+        while (counter < Engine.ROUNDS_NUMBER) {
             firstNumber = random.nextInt(101);
             secondNumber = random.nextInt(101);
-            operationNumber = random.nextInt(3);
-            switch(operationNumber) {
+            operationType = random.nextInt(3);
+            switch(operationType) {
                 case 0:
                     result = firstNumber + secondNumber;
                     System.out.println("Question: "
@@ -51,5 +49,7 @@ public class Calc {
                 counter = 0;
             }
         }
+        System.out.println("Congratulations, " + Engine.getUserName() + "!");
+        scanner.close();
         }
     }

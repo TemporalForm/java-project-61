@@ -1,21 +1,19 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 import java.util.Random;
 public class Even {
     public static void parityCheckGame() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the brain games!");
-        System.out.println("May I have your name?");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
+        Engine.gameProcessor("Even");
         String answer;
         int counter = 0;
         int number;
         boolean numberIsEven;
-        while (counter < 3) {
+        while (counter < Engine.ROUNDS_NUMBER) {
             number = random.nextInt(101);
             System.out.println("Question: "
                     + number
@@ -42,7 +40,7 @@ public class Even {
                 counter = 0;
             }
         }
-        System.out.println("Congratulations, " + userName + "!");
+        System.out.println("Congratulations, " + Engine.getUserName() + "!");
         scanner.close();
     }
 }
