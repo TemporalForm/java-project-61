@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -6,10 +6,11 @@ public class Even {
     public static void parityCheckGame() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the brain games!");
         System.out.println("May I have your name?");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
-        System.out.println(" Answer 'yes' if the number is even, otherwise answer 'no'");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'");
         String answer;
         int counter = 0;
         int number;
