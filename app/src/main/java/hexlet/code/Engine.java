@@ -5,13 +5,11 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUNDS_NUMBER = 3;
 
-    private static String userName;
-
     public static void gameProcessor(String gameRule, String[][] questionAndAnswerPairs) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the brain games!");
         System.out.println("May I have your name?");
-        userName = scanner.next();
+        String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(gameRule);
         for (String[] pair : questionAndAnswerPairs) {
@@ -28,9 +26,5 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + userName + "!");
-    }
-
-    public static String getUserName() {
-        return userName;
     }
 }
