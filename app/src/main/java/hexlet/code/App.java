@@ -15,9 +15,9 @@ public class App {
                 3 - Calc
                 0 - Exit
                 """);
-        String numberChoice = scanner.next();
-        System.out.println("Your choice: " + numberChoice);
-        switch (Integer.parseInt(numberChoice)) {
+        String gameNumber = scanner.next();
+        System.out.println("Your choice: " + gameNumber);
+        switch (Integer.parseInt(gameNumber)) {
             case 1:
                 Cli.greetUser();
                 break;
