@@ -5,10 +5,9 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Calc {
-    public static void calculatorGame() {
+    public static void launchCalculatorGame() {
         Random random = new Random();
         String gameRule = "What is the result of the expression?";
-        int roundsCounter = 0;
         String[][] questionAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
         for (int i = 0; i < questionAndAnswerPairs.length; i++) {
             int firstNumber = random.nextInt(101);

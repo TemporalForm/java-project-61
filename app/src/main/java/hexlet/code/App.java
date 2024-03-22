@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class App {
                 1 - Greet
                 2 - Even
                 3 - Calc
+                4 - GCD
                 0 - Exit
                 """);
         String gameNumber = scanner.next();
@@ -22,10 +24,13 @@ public class App {
                 Cli.greetUser();
                 break;
             case 2:
-                Even.parityCheckGame();
+                Even.launchParityCheckGame();
                 break;
             case 3:
-                Calc.calculatorGame();
+                Calc.launchCalculatorGame();
+                break;
+            case 4:
+                GCD.launchGreatestCommonDivisorGame();
                 break;
             case 0:
             default:

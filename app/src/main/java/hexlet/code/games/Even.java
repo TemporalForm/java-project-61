@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 public class Even {
-    public static void parityCheckGame() {
+    public static void launchParityCheckGame() {
         Random random = new Random();
         String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'";
         String[][] questionAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
