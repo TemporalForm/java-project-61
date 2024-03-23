@@ -4,7 +4,7 @@
 <a href="https://codeclimate.com/github/TemporalForm/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/75cd5ee7f69b20eec367/maintainability" /></a>
 
 ### *Even* game demo
-<a href="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq" target="_blank"><img src="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq.svg" /></a>>
+<a href="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq" target="_blank"><img src="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq.svg" /></a>
 
 ### *Calc* game demo
 <a href="https://asciinema.org/a/gKvhB78yyT6PCDT7pSmQYyjWk" target="_blank"><img src="https://asciinema.org/a/gKvhB78yyT6PCDT7pSmQYyjWk.svg" /></a>
@@ -14,3 +14,6 @@
 
 ### *Progression* game demo
 <a href="https://asciinema.org/a/oV8wbSaIvr9f8Zm1HR7lDa8gM" target="_blank"><img src="https://asciinema.org/a/oV8wbSaIvr9f8Zm1HR7lDa8gM.svg" /></a>
+
+### *Prime* game demo
+<a href="https://asciinema.org/a/NUF2NlcWk30Z5ssOH9swlmM5z" target="_blank"><img src="https://asciinema.org/a/NUF2NlcWk30Z5ssOH9swlmM5z.svg" /></a>
