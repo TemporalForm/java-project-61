@@ -13,9 +13,8 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(gameRule);
         for (String[] pair : questionAndAnswerPairs) {
-            System.out.println("Question: "
-                    + pair[0]
-                    + "\nYour answer: ");
+            System.out.println("Question: " + pair[0]);
+            System.out.print("Your answer: ");
             String userAnswer = scanner.next();
             if (userAnswer.equals(pair[1])) {
                 System.out.println("Correct!");

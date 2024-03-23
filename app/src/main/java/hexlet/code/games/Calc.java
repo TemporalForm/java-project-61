@@ -6,9 +6,9 @@ import java.util.Random;
 
 public class Calc {
     public static void launchCalculatorGame() {
-        Random random = new Random();
         String gameRule = "What is the result of the expression?";
         String[][] questionAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
+        Random random = new Random();
         for (int i = 0; i < questionAndAnswerPairs.length; i++) {
             int firstNumber = random.nextInt(101);
             int secondNumber = random.nextInt(101);
