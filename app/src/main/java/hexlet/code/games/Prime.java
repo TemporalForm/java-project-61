@@ -9,8 +9,8 @@ public class Prime {
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] questionsAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
         Random random = new Random();
-        String answer = null;
         for (int i = 0; i < questionsAndAnswerPairs.length; i++) {
+            String answer = null;
             int randomNumber = random.nextInt(101);
             if (randomNumber < 2) {
                 answer = "no";
