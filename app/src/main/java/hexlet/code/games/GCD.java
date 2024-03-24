@@ -14,12 +14,11 @@ public class GCD {
             int firstNumber = random.nextInt(101);
             int secondNumber = random.nextInt(101);
             int leastNumber = Math.min(firstNumber, secondNumber);
-            for (int j = leastNumber; j > 1; j--) {
+            for (int j = leastNumber; j > 0; j--) {
                 if (firstNumber % j == 0 && secondNumber % j == 0) {
                     answer = String.valueOf(j);
                     break;
                 }
-                answer = "1";
             }
             questionsAndAnswerPairs[i][0] = firstNumber + " " + secondNumber;
             questionsAndAnswerPairs[i][1] = answer;
