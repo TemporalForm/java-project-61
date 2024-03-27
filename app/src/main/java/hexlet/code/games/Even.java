@@ -2,20 +2,26 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Even {
-    public static void launchParityCheckGame() {
-        Random random = new Random();
-        String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] questionAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
-        for (int i = 0; i < questionAndAnswerPairs.length; i++) {
-            int randomNumber = random.nextInt(101);
-            String question = String.valueOf(randomNumber);
-            String answer = randomNumber % 2 == 0 ? "yes" : "no";
-            questionAndAnswerPairs[i][0] = question;
-            questionAndAnswerPairs[i][1] = answer;
+    public static String[] prepareRoundData() {
+        int randomNumber = Utils.getRandomNumber(0, 101);
+        String question = String.valueOf(randomNumber);
+        String answer = randomNumber % 2 == 0 ? "yes" : "no";
+        return new String[]{question, answer};
+    }
+
+    public static String[][] prepareGameRounds() {
+        String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
+        for (int i = 0; i < gameRounds.length; i++) {
+            gameRounds[i] = prepareRoundData();
         }
-        Engine.gameProcessor(gameRule, questionAndAnswerPairs);
+        return gameRounds;
+    }
+
+    public static void launchParityCheckGame() {
+        String gameRule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] gameRounds = prepareGameRounds();
+        Engine.gameProcessor(gameRule, gameRounds);
+
     }
 }

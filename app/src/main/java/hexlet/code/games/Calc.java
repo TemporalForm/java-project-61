@@ -2,36 +2,42 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Calc {
+    public static String[] prepareRoundData() {
+        int firstNumber = Utils.getRandomNumber(0, 101);
+        int secondNumber = Utils.getRandomNumber(0, 101);
+        int operationType = Utils.getRandomNumber(0, 3);
+        int operationResult;
+        char operator = switch (operationType) {
+            case 0 -> {
+                operationResult = firstNumber + secondNumber;
+                yield '+';
+            }
+            case 1 -> {
+                operationResult = firstNumber - secondNumber;
+                yield '-';
+            }
+            default -> {
+                operationResult = firstNumber * secondNumber;
+                yield '*';
+            }
+        };
+        String question = firstNumber + " " + operator + " " + secondNumber;
+        String answer = String.valueOf(operationResult);
+        return new String[]{question, answer};
+    }
+
+    public static String[][] prepareGameRounds() {
+        String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
+        for (int i = 0; i < gameRounds.length; i++) {
+            gameRounds[i] = prepareRoundData();
+        }
+        return gameRounds;
+    }
+
     public static void launchCalculatorGame() {
         String gameRule = "What is the result of the expression?";
-        String[][] questionAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
-        Random random = new Random();
-        for (int i = 0; i < questionAndAnswerPairs.length; i++) {
-            int firstNumber = random.nextInt(101);
-            int secondNumber = random.nextInt(101);
-            int operationType = random.nextInt(3);
-            int result;
-            char operator = switch (operationType) {
-                case 0 -> {
-                    result = firstNumber + secondNumber;
-                    yield '+';
-                }
-                case 1 -> {
-                    result = firstNumber - secondNumber;
-                    yield '-';
-                }
-                default -> {
-                    result = firstNumber * secondNumber;
-                    yield '*';
-                }
-            };
-            String question = String.valueOf(result);
-            questionAndAnswerPairs[i][0] = firstNumber + " " + operator + " " + secondNumber;
-            questionAndAnswerPairs[i][1] = question;
-        }
-        Engine.gameProcessor(gameRule, questionAndAnswerPairs);
+        String[][] gameRounds = prepareGameRounds();
+        Engine.gameProcessor(gameRule, gameRounds);
     }
 }

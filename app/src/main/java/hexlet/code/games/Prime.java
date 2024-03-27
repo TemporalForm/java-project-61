@@ -2,32 +2,42 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Prime {
+
+    public static String[] prepareRoundData() {
+        int randomNumber = Utils.getRandomNumber(0, 101);
+        String answer = null;
+        String question = String.valueOf(randomNumber);
+        //Если число меньше двух, то оно не простое
+        if (randomNumber < 2) {
+            answer = "no";
+            return new String[]{question, answer};
+        }
+        //Перебор делителей до корня из числа, начиная с 2
+        //Если делится без остатка, то число не простое
+        //Если не делится без остатка, то число простое
+        for (int j = 2; j <= Math.sqrt(randomNumber); j++) {
+            if (randomNumber % j == 0 && randomNumber != 2) {
+                answer = "no";
+                break;
+            } else {
+                answer = "yes";
+            }
+        }
+        return new String[]{question, answer};
+    }
+
+    public static String[][] prepareGameRounds() {
+        String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
+        for (int i = 0; i < gameRounds.length; i++) {
+            gameRounds[i] = prepareRoundData();
+        }
+        return gameRounds;
+    }
+
     public static void launchPrimeGame() {
         String gameRule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] questionsAndAnswerPairs = new String[Engine.ROUNDS_NUMBER][2];
-        Random random = new Random();
-        for (int i = 0; i < questionsAndAnswerPairs.length; i++) {
-            String answer = null;
-            int randomNumber = random.nextInt(101);
-            if (randomNumber < 2) {
-                answer = "no";
-                continue;
-            }
-            for (int j = 2; j < Math.sqrt(randomNumber); j++) {
-                if (randomNumber % j == 0 && randomNumber != 2) {
-                    answer = "no";
-                    break;
-                } else {
-                    answer = "yes";
-                }
-            }
-            String question = String.valueOf(randomNumber);
-            questionsAndAnswerPairs[i][0] = question;
-            questionsAndAnswerPairs[i][1] = answer;
-        }
-        Engine.gameProcessor(gameRule, questionsAndAnswerPairs);
+        String[][] gameRounds = prepareGameRounds();
+        Engine.gameProcessor(gameRule, gameRounds);
     }
 }
