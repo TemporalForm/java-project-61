@@ -17,12 +17,12 @@ public class Prime {
                 continue;
             }
             for (int j = 2; j < Math.sqrt(randomNumber); j++) {
-                if (randomNumber % j == 0) {
+                if (randomNumber % j == 0 && randomNumber != 2) {
                     answer = "no";
                     break;
-                    } else {
+                } else {
                     answer = "yes";
-                    }
+                }
             }
             String question = String.valueOf(randomNumber);
             questionsAndAnswerPairs[i][0] = question;

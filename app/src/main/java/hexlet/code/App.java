@@ -39,6 +39,7 @@ public class App {
                 break;
             case 0:
             default:
+                System.out.println("You have chosen the wrong number. Please, enter a number in 0 to 6 range");
                 scanner.close();
                 break;
         }

@@ -30,8 +30,8 @@ public class Calc {
             };
             String question = String.valueOf(result);
             questionAndAnswerPairs[i][0] = firstNumber + " " + operator + " " + secondNumber;
-            questionAndAnswerPairs[i][1] = String.valueOf(result);
+            questionAndAnswerPairs[i][1] = question;
         }
         Engine.gameProcessor(gameRule, questionAndAnswerPairs);
-        }
     }
+}
