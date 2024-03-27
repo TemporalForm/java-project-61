@@ -4,9 +4,9 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static String[] prepareRoundData() {
-        int firstNumber = Utils.getRandomNumber(0, 101);
-        int secondNumber = Utils.getRandomNumber(0, 101);
-        int operationType = Utils.getRandomNumber(0, 3);
+        int firstNumber = Utils.getRandomNumber(0, 100);
+        int secondNumber = Utils.getRandomNumber(0, 100);
+        int operationType = Utils.getRandomNumber(0, 2);
         int operationResult;
         char operator = switch (operationType) {
             case 0 -> {

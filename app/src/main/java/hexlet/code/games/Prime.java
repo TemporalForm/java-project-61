@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Prime {
 
     public static String[] prepareRoundData() {
-        int randomNumber = Utils.getRandomNumber(0, 101);
+        int randomNumber = Utils.getRandomNumber(0, 100);
         String answer = null;
         String question = String.valueOf(randomNumber);
         //Если число меньше двух, то оно не простое

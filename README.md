@@ -3,6 +3,22 @@
 
 <a href="https://codeclimate.com/github/TemporalForm/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/75cd5ee7f69b20eec367/maintainability" /></a>
 
+# *Mind Games* Project
+«Mind Games» is a set of five console games. Each game asks questions, that must be answered correctly. To successfully complete the game you need to correctly answer to three questions. Wrong answer will end the game and prompt you to play it again. List of games:
+
+1. Calculator - arithmetic expressions that need to be calculated.
+2. Progression - finding missing numbers in a sequence of numbers.
+3. Definition of an even number.
+4. Definition of the greatest common divisor.
+5. Definition of a prime number. 
+
+## Setup and Launch
+1. Clone the repository to your computer.
+2. Navigate to the root of the repository, and then to the *app* directory.
+3. Run the program using the command *make run-dist*.
+
+---
+
 ### *Even* game demo
 <a href="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq" target="_blank"><img src="https://asciinema.org/a/vbMbR35vuY9Mow7B6d6HG3BWq.svg" /></a>
 

@@ -4,8 +4,8 @@ import hexlet.code.Engine;
 
 public class GCD {
     public static String[] prepareRoundData() {
-        int firstNumber = Utils.getRandomNumber(1, 101);
-        int secondNumber = Utils.getRandomNumber(1, 101);
+        int firstNumber = Utils.getRandomNumber(1, 100);
+        int secondNumber = Utils.getRandomNumber(1, 100);
         int leastNumber = Math.min(firstNumber, secondNumber);
         String answer = null;
         // Цикл для поиска НОД по убыванию от меньшего числа с шагом 1
