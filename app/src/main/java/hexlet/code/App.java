@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
@@ -18,28 +22,27 @@ public class App {
                 6 - Prime
                 Your choice:\s""");
         String gameNumber = scanner.next();
-        switch (Integer.parseInt(gameNumber)) {
-            case 1:
+        switch (gameNumber) {
+            case "1":
                 Cli.greetUser();
                 break;
-            case 2:
+            case "2":
                 Even.launchParityCheckGame();
                 break;
-            case 3:
+            case "3":
                 Calc.launchCalculatorGame();
                 break;
-            case 4:
+            case "4":
                 GCD.launchGreatestCommonDivisorGame();
                 break;
-            case 5:
+            case "5":
                 Progression.launchProgressionGame();
                 break;
-            case 6:
+            case "6":
                 Prime.launchPrimeGame();
                 break;
-            case 0:
             default:
-                System.out.println("You have chosen the wrong number. Please, enter a number in 0 to 6 range");
+                System.out.println("You have chosen the wrong number. Please, enter a number in 1 to 6 range");
                 scanner.close();
                 break;
         }

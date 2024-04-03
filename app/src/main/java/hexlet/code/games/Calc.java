@@ -1,36 +1,40 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
-    public static String[] prepareRoundData() {
-        int firstNumber = Utils.getRandomNumber(0, 100);
-        int secondNumber = Utils.getRandomNumber(0, 100);
-        int operationType = Utils.getRandomNumber(0, 2);
+    public static int calculate(int firstNumber, int secondNumber, char operator) {
         int operationResult;
-        char operator = switch (operationType) {
-            case 0 -> {
+        switch (operator) {
+            case '+':
                 operationResult = firstNumber + secondNumber;
-                yield '+';
-            }
-            case 1 -> {
+                break;
+            case '-':
                 operationResult = firstNumber - secondNumber;
-                yield '-';
-            }
-            default -> {
+                break;
+            case '*':
+            default:
                 operationResult = firstNumber * secondNumber;
-                yield '*';
-            }
-        };
-        String question = firstNumber + " " + operator + " " + secondNumber;
-        String answer = String.valueOf(operationResult);
-        return new String[]{question, answer};
+                break;
+        }
+        return operationResult;
     }
 
     public static String[][] prepareGameRounds() {
+        final int minValue = 0;
+        final int maxValue = 2;
+        char[] operators = {'+', '-', '*'};
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
         for (int i = 0; i < gameRounds.length; i++) {
-            gameRounds[i] = prepareRoundData();
+            int firstNumber = Utils.getNumberFromZeroToHundred();
+            int secondNumber = Utils.getNumberFromZeroToHundred();
+            int operationType = Utils.getSpecificNumberInRange(minValue, maxValue);
+            char operator = operators[operationType];
+            String question = firstNumber + " " + operator + " " + secondNumber;
+            String answer = String.valueOf(calculate(firstNumber, secondNumber, operator));
+            gameRounds[i][0] = question;
+            gameRounds[i][1] = answer;
         }
         return gameRounds;
     }

@@ -1,28 +1,32 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
-    public static String[] prepareRoundData() {
-        int firstNumber = Utils.getRandomNumber(1, 100);
-        int secondNumber = Utils.getRandomNumber(1, 100);
+    public static int findGreatestCommonDivisor(int firstNumber, int secondNumber) {
         int leastNumber = Math.min(firstNumber, secondNumber);
-        String answer = null;
-        // Цикл для поиска НОД по убыванию от меньшего числа с шагом 1
+        int greatestCommonDivisor = 0;
         for (int j = leastNumber; j > 0; j--) {
             if (firstNumber % j == 0 && secondNumber % j == 0) {
-                answer = String.valueOf(j);
-                break;
+                greatestCommonDivisor = j;
+                return greatestCommonDivisor;
             }
         }
-        String question = firstNumber + " " + secondNumber;
-        return new String[]{question, answer};
+        return greatestCommonDivisor;
     }
 
     public static String[][] prepareGameRounds() {
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
+        final int minValue = 1;
+        final int maxValue = 100;
         for (int i = 0; i < gameRounds.length; i++) {
-            gameRounds[i] = prepareRoundData();
+            int firstNumber = Utils.getSpecificNumberInRange(minValue, maxValue);
+            int secondNumber = Utils.getSpecificNumberInRange(minValue, maxValue);
+            String question = firstNumber + " " + secondNumber;
+            String answer = String.valueOf(findGreatestCommonDivisor(firstNumber, secondNumber));
+            gameRounds[i][0] = question;
+            gameRounds[i][1] = answer;
         }
         return gameRounds;
     }

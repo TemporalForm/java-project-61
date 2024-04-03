@@ -1,19 +1,21 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Even {
-    public static String[] prepareRoundData() {
-        int randomNumber = Utils.getRandomNumber(0, 101);
-        String question = String.valueOf(randomNumber);
-        String answer = randomNumber % 2 == 0 ? "yes" : "no";
-        return new String[]{question, answer};
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 
     public static String[][] prepareGameRounds() {
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
         for (int i = 0; i < gameRounds.length; i++) {
-            gameRounds[i] = prepareRoundData();
+            int randomNumber = Utils.getNumberFromZeroToHundred();
+            String question = String.valueOf(randomNumber);
+            String answer = isEven(randomNumber) ? "yes" : "no";
+            gameRounds[i][0] = question;
+            gameRounds[i][1] = answer;
         }
         return gameRounds;
     }
