@@ -4,11 +4,11 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
-    public static boolean isEven(int number) {
+    private static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
-    public static String[][] prepareGameRounds() {
+    private static String[][] prepareGameRounds() {
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
         for (int i = 0; i < gameRounds.length; i++) {
             int randomNumber = Utils.getNumberFromZeroToHundred();

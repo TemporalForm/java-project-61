@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Prime {
 
-    public static boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }
@@ -17,7 +17,7 @@ public class Prime {
         return true;
     }
 
-    public static String[][] prepareGameRounds() {
+    private static String[][] prepareGameRounds() {
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
         String answer;
         for (int i = 0; i < gameRounds.length; i++) {

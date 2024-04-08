@@ -4,19 +4,11 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class GCD {
-    public static int findGreatestCommonDivisor(int firstNumber, int secondNumber) {
-        int leastNumber = Math.min(firstNumber, secondNumber);
-        int greatestCommonDivisor = 0;
-        for (int j = leastNumber; j > 0; j--) {
-            if (firstNumber % j == 0 && secondNumber % j == 0) {
-                greatestCommonDivisor = j;
-                return greatestCommonDivisor;
-            }
-        }
-        return greatestCommonDivisor;
+    private static int findGreatestCommonDivisor(int a, int b) {
+        return b == 0 ? a : findGreatestCommonDivisor(b, a % b);
     }
 
-    public static String[][] prepareGameRounds() {
+    private static String[][] prepareGameRounds() {
         String[][] gameRounds = new String[Engine.ROUNDS_NUMBER][2];
         final int minValue = 1;
         final int maxValue = 100;

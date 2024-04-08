@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
-    public static int calculate(int firstNumber, int secondNumber, char operator) {
+    private static Integer calculate(int firstNumber, int secondNumber, char operator) {
         int operationResult;
         switch (operator) {
             case '+':
@@ -14,14 +14,15 @@ public class Calc {
                 operationResult = firstNumber - secondNumber;
                 break;
             case '*':
-            default:
                 operationResult = firstNumber * secondNumber;
                 break;
+            default:
+                return null;
         }
         return operationResult;
     }
 
-    public static String[][] prepareGameRounds() {
+    private static String[][] prepareGameRounds() {
         final int minValue = 0;
         final int maxValue = 2;
         char[] operators = {'+', '-', '*'};
